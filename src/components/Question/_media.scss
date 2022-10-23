@@ -1,0 +1,78 @@
+// Media query for mobile content (portrait)
+@media screen and (max-width: 450px) {
+
+    // Question content
+    .question_container {
+
+        .question {
+            font-size: 1rem;
+        }
+
+        .answers_container {
+            width: 100%;
+            gap: .5rem;
+            justify-content: center;
+
+            .answer_container {
+                width: 22%;
+
+                i {
+                    top: -6%;
+                }
+
+                .answer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    width: 100%;
+                    word-break: break-word;
+                    padding: .3rem .5rem;
+                }
+            }
+        }
+
+        .question_separator {
+            width: 100%;
+            margin: 0;
+            margin-top: .25rem;
+        }
+    }
+}
+
+
+// Media query for mobile content (landscape)
+@media screen and (max-height: 750px) and (min-width: 451px) {
+
+    // Question content
+    .question_container {
+
+        .question {
+            font-size: .925rem;
+        }
+
+        .answers_container {
+            gap: 1.25rem;
+            justify-content: center;
+
+            .answer_container {
+                width: 20%;
+
+              .answer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    width: 100%;
+                    font-size: .725rem;
+                    word-break: break-word;
+                    padding: .4rem .75rem;
+                }
+            }
+        }
+
+        .question_separator {
+            margin-top: .05rem;
+        }
+    }
+}

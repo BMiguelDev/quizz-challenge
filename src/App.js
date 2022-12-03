@@ -272,11 +272,17 @@ export default function App() {
             <p>Copyright © 2022 Bruno Miguel</p>
           </div>
           <div className="footer_icon_container">
-            <a href="https://google.com" target="_blank" rel="noreferrer">
-              <i className="fa-brands fa-linkedin"></i>
+            <a href="https://github.com/BMiguelDev/quizz-challenge" target="_blank" rel="noreferrer">
+              <i className="fa-solid fa-code"></i>
             </a>
             <a href="https://google.com" target="_blank" rel="noreferrer">
+              <i className="fa-solid fa-desktop"></i>
+            </a>
+            <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-github"></i>
+            </a>
+            <a href="https://google.com" target="_blank" rel="noreferrer">
+              <i className="fa-brands fa-linkedin"></i>
             </a>
           </div>
         </div>

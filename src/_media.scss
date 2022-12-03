@@ -156,6 +156,12 @@
                         }
                     }
                 }
+
+                a:nth-of-type(1), a:nth-of-type(2) {
+                    i {
+                        font-size: 1rem;
+                    }
+                }
             }
         }
     }
@@ -343,6 +349,12 @@
                         i {
                             color: var(--footer-color);
                         }
+                    }
+                }
+
+                a:nth-of-type(1), a:nth-of-type(2) {
+                    i {
+                        font-size: .875rem;
                     }
                 }
             }

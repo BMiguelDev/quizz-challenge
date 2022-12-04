@@ -6,8 +6,7 @@
 
 #### Check the app: https://bmigueldev.github.io/quizz-challenge
 
-###### Note: 
-- The app's functionality may be hindered by the APIs used
+###### Note: The app's functionality may be hindered by the APIs used
 
 ## App functionalities:
 - Get a set of random or filtered (category and difficulty) trivia questions from an API

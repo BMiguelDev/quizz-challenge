@@ -37,7 +37,6 @@ export default function App() {
     JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_IS_LOADING)) || false);
 
   // Boolean variable that indicates if dark mode is on or off
-  // Some functionality replaced with UseRef to prevent unnecessary re-renders
   const [isDarkMode, setIsDarkMode] = useState(() =>
     JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_IS_DARK_MODE)) || false);
 

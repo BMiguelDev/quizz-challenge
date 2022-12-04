@@ -16,3 +16,4 @@
 - React, Sass
 - API Manipulation
 - Responsive Design
+- Performance and Accessibility Optimization (100% Chrome Lighthouse score)

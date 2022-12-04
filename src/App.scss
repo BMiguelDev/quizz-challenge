@@ -24,11 +24,14 @@ body {
     --answer-selected-color: rgba(94, 94, 255, 0.26);
     --answer-correct-color: rgba(0, 191, 51, 0.434);
     --answer-correct-selected-color: rgb(229, 252, 79);
-    --answer-incorrect-color: rgba(255, 0, 0, 0.295);
+    --answer-correct-selected-text-color: rgb(39, 39, 123);
+    --answer-incorrect-color: rgb(255, 171, 171);
+    --answer-dimmed-color: rgb(0, 0, 100);
+    --answer-dimmed-color-transparent: rgb(0, 0, 100, .775);
     --answer-checkmark-color: rgba(41, 199, 30, 0.8);
     --button-bg-color: rgba(41, 41, 135, 0.852);
     --button-color: rgb(238, 238, 238);
-    --quizz-reset-button-bg-color: rgba(197, 22, 22, 0.699);
+    --quizz-reset-button-bg-color: rgba(159, 20, 20, 0.921);
     --main-title-color: rgb(36, 36, 118);
     --main-text-color: rgb(21, 21, 21);
     --question-separator-border-color: rgba(0, 0, 0, 0.063);
@@ -48,12 +51,15 @@ body {
 .dark-mode {
     --app-bg-color: rgba(26, 26, 26, 0.99);
     --question-color: rgba(110, 176, 242, 0.93);
-    --answer-color: rgb(115, 129, 220);
+    --answer-color: rgb(218, 224, 255);
     --answer-border-color: rgba(78, 76, 191, 0.974);
     --answer-selected-color: rgba(47, 20, 200, 0.816);
-    --answer-correct-color: rgba(56, 206, 96, 0.415);
-    --answer-correct-selected-color: rgb(193, 210, 85);
-    --answer-incorrect-color: rgba(233, 74, 74, 0.977);
+    --answer-correct-color: rgb(0, 84, 0);
+    --answer-correct-selected-color: rgb(185, 202, 77);
+    --answer-correct-selected-text-color: rgb(23, 56, 6);
+    --answer-incorrect-color: rgb(135, 32, 32);
+    --answer-dimmed-color: rgb(255, 255, 255);
+    --answer-dimmed-color-transparent: rgba(239, 242, 255, 0.9);
     --answer-checkmark-color: rgba(33, 198, 21, 0.725);
     --button-bg-color: rgba(67, 67, 255, 0.675);
     --button-color: rgb(213, 213, 213);
@@ -101,9 +107,25 @@ body {
         align-items: center;
         justify-content: center;
 
-        i {
-            font-size: 6rem;
+
+        svg {
             color: var(--main-text-color);
+            font-size: 6rem;
+
+            @keyframes spinInfinite {
+                0% {
+                    //rotate: x 90deg;
+
+                    rotate: 0;
+                }
+
+                100% { 
+                    rotate: 360deg;
+                }
+            }
+
+            animation: spinInfinite 1.25s linear 0s infinite;
+        
         }
     }
 }
@@ -360,21 +382,21 @@ body {
                 border-radius: 2rem;
                 text-decoration: none;
 
-                i {
+                svg {
                     font-size: 1.25rem;
                 }
 
                 &:hover {
                     background-color: var(--footer-color);
 
-                    i {
+                    svg {
                         color: var(--footer-bg-color);
                     }
                 }
             }
 
             a:nth-of-type(1), a:nth-of-type(2) {
-                i {
+                svg {
                     font-size: 1.15rem;
                 }
             }
@@ -396,8 +418,10 @@ body {
     transition: all .2s ease-in-out;
     background-color: transparent;
 
-    i {
+    svg {
         font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
         padding: .5rem;
         color: var(--dark-mode-icon-color);
         background-color: var(--dark-mode-icon-bg-color);

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { nanoid } from "nanoid"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './Question.module.scss';
 
@@ -53,7 +55,7 @@ export default function Question(props) {
               >
                 {decodeQuestionString(answer)}
               </p>
-              {getAnswerClassName(answer)===`${styles.answer} ${styles.answer_selected} ${styles.answer_correct}` && <i className="fa-solid fa-check"></i>}
+              {getAnswerClassName(answer)===`${styles.answer} ${styles.answer_selected} ${styles.answer_correct}` && <FontAwesomeIcon icon={faCheck} /> /*<i className="fa-solid fa-check"></i>*/}
             </div>
           ))
         }

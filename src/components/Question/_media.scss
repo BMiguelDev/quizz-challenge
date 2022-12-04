@@ -5,19 +5,22 @@
     .question_container {
 
         .question {
-            font-size: 1rem;
+            font-size: .875rem;
         }
 
         .answers_container {
             width: 100%;
-            gap: .5rem;
-            justify-content: center;
+            //gap: .75rem;
+            gap: unset;
+            //justify-content: center;
+            justify-content: space-evenly;
 
             .answer_container {
-                width: 22%;
+                width: 20%;
 
-                i {
-                    top: -6%;
+                svg {
+                    top: 1%;
+                    font-size: 1.5rem;
                 }
 
                 .answer {
@@ -27,7 +30,8 @@
                     text-align: center;
                     width: 100%;
                     word-break: break-word;
-                    padding: .3rem .5rem;
+                    padding: .15rem .4rem;
+                    font-size: .625rem;
                 }
             }
         }
@@ -48,7 +52,7 @@
     .question_container {
 
         .question {
-            font-size: .925rem;
+            font-size: .875rem;
         }
 
         .answers_container {
@@ -64,15 +68,16 @@
                     justify-content: center;
                     text-align: center;
                     width: 100%;
-                    font-size: .725rem;
+                    font-size: .675rem;
                     word-break: break-word;
-                    padding: .4rem .75rem;
+                    padding: .2rem .75rem;
                 }
             }
         }
 
         .question_separator {
-            margin-top: .05rem;
+            margin-top: 0rem;
+            margin-bottom: .2rem;
         }
     }
 }

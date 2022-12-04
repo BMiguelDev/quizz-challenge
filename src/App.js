@@ -1,4 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, /*useRef*/ } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun, faCode, faDesktop, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './App.scss';
 import Question from './components/Question/Question';
@@ -47,7 +50,7 @@ export default function App() {
     JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_QUIZZ_OPTIONS)) || { category: "", difficulty: "", urlUsed: "" });
 
   // Variable to handle dark mode without unnecessary re-renders
-  let darkModeRef = useRef();
+  //let darkModeRef = useRef();
 
   // On first component mount, fetch question categories from API and store then in the <quizzCategoriesArray> variable
   useEffect(() => {
@@ -172,7 +175,7 @@ export default function App() {
   // Function that toggles the <isDarkMode> variable and updates <darkModeRef> ref variable to add/remove the "dark-mode" className
   function handleDarkMode() {
     setIsDarkMode(prevIsDarkMode => !prevIsDarkMode)
-    darkModeRef.current.className = (darkModeRef.current.className === "app-container") ? "app-container dark-mode" : "app-container";
+    //darkModeRef.current.className = (darkModeRef.current.className === "app-container") ? "app-container dark-mode" : "app-container";
   }
 
   // Function that updates the <quizzOptions> variable object according the the options chosen by the user
@@ -197,7 +200,7 @@ export default function App() {
   }
 
   return (
-    <div ref={darkModeRef} className="app-container" /*className="app-container"*//*className={isDarkMode ? "app-container dark-mode" : "app-container"}*/>
+    <div /*ref={darkModeRef}*/ className={isDarkMode ? "app-container dark-mode" : "app-container"}>
       {
         isQuizzStarted ?
           (
@@ -205,8 +208,7 @@ export default function App() {
               {
                 isLoading ?
                   <div className="loading-container">
-                    <i className="fas fa-spinner fa-spin"></i>
-                    {/* <i className="fa-solid fa-book fa-spin"></i> */}
+                    <FontAwesomeIcon icon={faSpinner} />
                   </div> :
                   <div className="questions-container">
                     {quizzQuestions.map((questionData, index) =>
@@ -258,7 +260,7 @@ export default function App() {
                     </select>
                   </label>
                 </div>
-                <button type="submit" className="unstarted-quizz-button" /*onClick={handleQuizzStart}*/>Start Quizz</button>
+                <button type="submit" className="unstarted-quizz-button">Start Quizz</button>
               </form>
             </div >
           )
@@ -272,26 +274,25 @@ export default function App() {
             <p>Copyright © 2022 Bruno Miguel</p>
           </div>
           <div className="footer_icon_container">
-            <a href="https://github.com/BMiguelDev/quizz-challenge" target="_blank" rel="noreferrer">
-              <i className="fa-solid fa-code"></i>
+            <a href="https://github.com/BMiguelDev/quizz-challenge" target="_blank" rel="noreferrer" aria-label="Check the app's code">
+              <FontAwesomeIcon icon={faCode} />
             </a>
-            <a href="https://google.com" target="_blank" rel="noreferrer">
-              <i className="fa-solid fa-desktop"></i>
+            <a href="https://google.com" target="_blank" rel="noreferrer" aria-label="My Website">
+              <FontAwesomeIcon icon={faDesktop} />
             </a>
-            <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer">
-              <i className="fa-brands fa-github"></i>
+            <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer" aria-label="Github Profile">
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="https://google.com" target="_blank" rel="noreferrer">
-              <i className="fa-brands fa-linkedin"></i>
+            <a href="https://google.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
+              <FontAwesomeIcon icon={faGithub} />
             </a>
           </div>
         </div>
       </footer>
-      <button className="dark-mode-button" onClick={handleDarkMode}>
+      <button className="dark-mode-button" title="Dark Mode" onClick={handleDarkMode}>
         {
           isDarkMode ?
-            <i className="fa-solid fa-moon"></i> :
-            <i className="fa-solid fa-sun"></i>
+            <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />
         }
       </button>
     </div >

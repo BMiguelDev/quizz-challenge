@@ -19,14 +19,15 @@
             display: flex;
             position: relative;
 
-            i {
+            svg {
                 position: absolute;
                 right: -10%;
                 top: 0;
                 font-size: 1.75rem;
                 color: var(--answer-checkmark-color);
                 opacity: 0;
-                text-shadow: 0 0 .6rem rgb(251, 255, 235), 0 0 1.1rem rgb(253, 255, 187), 0 0 1.6rem #82ff2f, 0 0 2.1rem #5ce600;
+                filter: drop-shadow(0 0 3px rgb(228, 255, 205));
+                //text-shadow: 0 0 .6rem rgb(251, 255, 235), 0 0 1.1rem rgb(253, 255, 187), 0 0 1.6rem #82ff2f, 0 0 2.1rem #5ce600;
                 z-index: 3;
 
                 @keyframes checkmark-opacity {
@@ -41,11 +42,13 @@
 
                 @keyframes checkmark-glow {
                     0% {
-                        text-shadow: 0 0 .15rem rgb(240, 255, 216), 0 0 .4rem rgb(240, 255, 216), 0 0 .9rem rgb(228, 255, 205), 0 0 1.4rem #5ce600, 0 0 1.9rem #5ce600, 0 0 2.4rem #3a9000, 0 0 2.9rem #3a9000;
+                        filter: drop-shadow(0 0 0 rgb(228, 255, 205));
+                        //text-shadow: 0 0 .15rem rgb(240, 255, 216), 0 0 .4rem rgb(240, 255, 216), 0 0 .9rem rgb(228, 255, 205), 0 0 1.4rem #5ce600, 0 0 1.9rem #5ce600, 0 0 2.4rem #3a9000, 0 0 2.9rem #3a9000;
                     }
 
                     100% {
-                        text-shadow: 0 0 .15rem rgb(80, 229, 0), 0 0 .4rem rgb(80, 229, 0), 0 0 .9rem #9ff930, 0 0 1.4rem #a8dd67, 0 0 1.9rem #d7ffa7;
+                        filter: drop-shadow(0 0 1rem rgb(80, 229, 0));
+                        //text-shadow: 0 0 .15rem rgb(80, 229, 0), 0 0 .4rem rgb(80, 229, 0), 0 0 .9rem #9ff930, 0 0 1.4rem #a8dd67, 0 0 1.9rem #d7ffa7;
                     }
                 }
 
@@ -94,15 +97,19 @@
 
                 &.answer_selected.answer_correct {
                     background-color: var(--answer-correct-selected-color);
+                    color: var(--answer-correct-selected-text-color);
                 }
 
                 &.answer_incorrect {
                     background-color: var(--answer-incorrect-color);
-                    opacity: 0.5;
+                    color: var(--answer-dimmed-color-transparent);
+                    //opacity: .5;
+                    //opacity: .8;
                 }
 
                 &.answer_dimmed {
-                    opacity: 0.5;
+                    color: var(--answer-dimmed-color);
+                    opacity: .7;
                 }
             }
         }

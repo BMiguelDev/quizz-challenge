@@ -112,61 +112,6 @@
     }
 
 
-    // Footer container
-    .footer_container {
-        padding: .25rem .5rem;
-        gap: .5rem;
-
-        .footer_api_description {
-
-            p {
-                font-size: .7rem;
-                word-spacing: .01rem;
-            }
-        }
-
-        .footer_text_container {
-            gap: .35rem;
-
-            .footer_text {
-
-                p {
-                    word-spacing: .01rem;
-                    font-size: .7rem;
-                }
-            }
-
-            .footer_icon_container {
-                gap: .3rem;
-
-                a {
-                    width: 1.75rem;
-                    height: 1.75rem;
-                    padding: .75rem;
-
-                    svg {
-                        font-size: 1.15rem;
-                    }
-
-                    &:hover {
-                        background-color: var(--footer-bg-color);
-
-                        svg {
-                            color: var(--footer-color);
-                        }
-                    }
-                }
-
-                a:nth-of-type(1), a:nth-of-type(2) {
-                    svg  {
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-    }
-
-
     // Dark Mode content
     .dark-mode-button {
         top: 1.5%;
@@ -308,62 +253,7 @@
         }
     }
 
-
-    // Footer container
-    .footer_container {
-        height: 7.5%;
-        padding: .15rem .75rem;
-
-        .footer_api_description {
-
-            p {
-                font-size: .75rem;
-                word-spacing: .015rem;
-            }
-        }
-
-        .footer_text_container {
-            gap: .5rem;
-
-            .footer_text {
-
-                p {
-                    word-spacing: .015rem;
-                    font-size: .75rem;
-                }
-            }
-
-            .footer_icon_container {
-                gap: .4rem;
-
-                a {
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    padding: .7rem;
-
-                    svg {
-                        font-size: 1rem;
-                    }
-
-                    &:hover {
-                        background-color: var(--footer-bg-color);
-
-                        svg {
-                            color: var(--footer-color);
-                        }
-                    }
-                }
-
-                a:nth-of-type(1), a:nth-of-type(2) {
-                    svg {
-                        font-size: .875rem;
-                    }
-                }
-            }
-        }
-    }
-
-
+    
     // Dark Mode content
     .dark-mode-button {
         top: 2.5%;

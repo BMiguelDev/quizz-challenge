@@ -1,10 +1,10 @@
 import React, { useState, useEffect, /*useRef*/ } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun, faCode, faDesktop, faSpinner } from '@fortawesome/free-solid-svg-icons'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faMoon, faSun, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import './App.scss';
 import Question from './components/Question/Question';
+import Footer from './components/Footer/Footer';
 
 // Local storage constants
 const LOCAL_STORAGE_KEY_IS_QUIZ_STARTED = "QuizzicalApp.isQuizStarted";
@@ -264,30 +264,7 @@ export default function App() {
             </div >
           )
       }
-      <footer className="footer_container">
-        <div className="footer_api_description">
-          <p>Powered by <a href="https://opentdb.com/" target="_blank" rel="noreferrer">Open Trivia Database API</a></p>
-        </div>
-        <div className="footer_text_container">
-          <div className="footer_text">
-            <p>Copyright © 2022 Bruno Miguel</p>
-          </div>
-          <div className="footer_icon_container">
-            <a href="https://github.com/BMiguelDev/quizz-challenge" target="_blank" rel="noreferrer" aria-label="Check the app's code">
-              <FontAwesomeIcon icon={faCode} />
-            </a>
-            <a href="https://google.com" target="_blank" rel="noreferrer" aria-label="My Website">
-              <FontAwesomeIcon icon={faDesktop} />
-            </a>
-            <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer" aria-label="Github Profile">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href="https://google.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       <button className="dark-mode-button" title="Dark Mode" onClick={handleDarkMode}>
         {
           isDarkMode ?

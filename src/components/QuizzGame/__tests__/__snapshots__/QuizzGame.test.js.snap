@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component should always match snaphot 1`] = `
+<div
+  className="quizz_container"
+>
+  <div
+    className="questions_container"
+    title="questions_container"
+  >
+    <div
+      className="question_container"
+    >
+      <h3
+        className="question"
+      >
+        Which of these is NOT the name of a rival gang in the video game Saint's Row 2?
+      </h3>
+      <div
+        className="answers_container"
+      />
+      <hr
+        className="question_separator"
+      />
+    </div>
+    <div
+      className="question_container"
+    >
+      <h3
+        className="question"
+      >
+        The common software-programming acronym "I18N" comes from the term "Interlocalization".
+      </h3>
+      <div
+        className="answers_container"
+      />
+      <hr
+        className="question_separator"
+      />
+    </div>
+    <div
+      className="question_container"
+    >
+      <h3
+        className="question"
+      >
+        Which of these bands is the oldest?
+      </h3>
+      <div
+        className="answers_container"
+      />
+      <hr
+        className="question_separator"
+      />
+    </div>
+    <div
+      className="question_container"
+    >
+      <h3
+        className="question"
+      >
+        Which show is known for the songs "You are a Pirate", "Cooking by the Book" and "We Are Number One"?
+      </h3>
+      <div
+        className="answers_container"
+      />
+      <hr
+        className="question_separator"
+      />
+    </div>
+    <div
+      className="question_container"
+    >
+      <h3
+        className="question"
+      >
+        Which was the first "Call Of Duty: Zombies" map to introduce the "Wunderwaffe DG-2"?
+      </h3>
+      <div
+        className="answers_container"
+      />
+      <hr
+        className="question_separator"
+      />
+    </div>
+  </div>
+  <div
+    className="results_container"
+  >
+    <div
+      className="results_description results_description_hide"
+      title="results_description"
+    >
+      <h3
+        className="results_correct_answers"
+      >
+        You scored 
+        0
+        /5 correct answers
+      </h3>
+      <span
+        className="completion_bar_frame"
+      >
+        <span
+          className="completion_bar_filling"
+          style={
+            Object {
+              "border": "none",
+              "left": "0%",
+              "padding": "0.7rem .2rem",
+              "width": "10%",
+            }
+          }
+        />
+      </span>
+    </div>
+    <div
+      className="results_buttons_container"
+    >
+      <button
+        className="quizz_action_button"
+        onClick={[MockFunction]}
+      >
+        Check Answers
+      </button>
+      <button
+        className="quizz_reset_button"
+        onClick={[MockFunction]}
+      >
+        Reset Quizz
+      </button>
+    </div>
+  </div>
+</div>
+`;

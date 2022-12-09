@@ -48,7 +48,7 @@ export default function Question(props) {
       <div className={styles.answers_container}>
         {
           scrambledAnswers.map(answer => (
-            <div key={nanoid()} className={styles.answer_container}>
+            <div key={nanoid()} className={styles.answer_container} title="answer">
               <p
                 className={getAnswerClassName(answer)}
                 onClick={() => props.handleSelectAnswer(props.questionIndex, answer)}

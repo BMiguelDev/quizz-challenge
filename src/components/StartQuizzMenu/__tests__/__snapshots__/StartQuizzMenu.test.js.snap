@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component should always match snapshot 1`] = `
+<div
+  className="unstarted_quizz_container"
+>
+  <h2
+    className="unstarted_quizz_title"
+  >
+    Quizz Challenge
+  </h2>
+  <p
+    className="unstarted_quizz_text"
+  >
+    Choose random trivia questions and 
+    <br />
+    answer as many as you can!
+  </p>
+  <form
+    onSubmit={[MockFunction]}
+  >
+    <div
+      className="unstarted_quizz_inputs_container"
+    >
+      <label>
+        Category
+        <br />
+        <select
+          name="category"
+          onChange={[MockFunction]}
+          value="categoryTest1"
+        >
+          <option
+            value=""
+          >
+            Any
+          </option>
+          <option
+            value={1}
+          >
+            Test1
+          </option>
+          <option
+            value={2}
+          >
+            Test2
+          </option>
+        </select>
+      </label>
+      <label>
+        Difficulty
+        <br />
+        <select
+          name="difficulty"
+          onChange={[MockFunction]}
+          value="difficultyTest1"
+        >
+          <option
+            value=""
+          >
+            Any
+          </option>
+          <option
+            value="easy"
+          >
+            Easy
+          </option>
+          <option
+            value="medium"
+          >
+            Medium
+          </option>
+          <option
+            value="hard"
+          >
+            Hard
+          </option>
+        </select>
+      </label>
+    </div>
+    <button
+      className="unstarted_quizz_button"
+      type="submit"
+    >
+      Start Quizz
+    </button>
+  </form>
+</div>
+`;

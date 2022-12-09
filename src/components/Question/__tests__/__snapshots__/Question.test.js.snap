@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component should always match snapshot 1`] = `
+<div
+  className="question_container"
+>
+  <h3
+    className="question"
+  >
+    Which of these is NOT the name of a rival gang in the video game Saint's Row 2?
+  </h3>
+  <div
+    className="answers_container"
+  />
+  <hr
+    className="question_separator"
+  />
+</div>
+`;

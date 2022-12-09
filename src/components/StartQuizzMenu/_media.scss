@@ -1,0 +1,103 @@
+// Media query for mobile content (portrait)
+@media screen and (max-width: 450px) {
+
+     // Unstarted quizz page content
+     .unstarted_quizz_container {
+        padding: 7rem 3rem;
+
+        .unstarted_quizz_title {
+            font-size: 3rem;
+        }
+
+        .unstarted_quizz_text {
+            font-size: 1.1rem;
+        }
+
+        .unstarted_quizz_inputs_container {
+
+            label {
+                font-size: 1.1rem;
+
+                &:nth-of-type(1) {
+                    flex: 2;
+                }
+
+                &:nth-of-type(2) {
+                    flex: 1;
+                }
+
+                select {
+                    padding: .55rem;
+                    font-size: .95rem;
+                }
+
+                &:first-of-type select {
+                    width: 100%;
+                }
+
+                &:nth-of-type(2) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .unstarted_quizz_button {
+            font-size: 1.2rem;
+            padding: 1.25rem 5rem;
+        }
+    }
+}
+
+
+// Media query for mobile content (landscape)
+@media screen and (max-height: 750px) and (min-width: 451px) and (max-width: 950px) {
+
+      // Unstarted quizz page content
+      .unstarted_quizz_container {
+        padding: 3rem;
+
+        .unstarted_quizz_title {
+            font-size: 2.15rem;
+            padding-bottom: .95rem;
+        }
+
+        .unstarted_quizz_text {
+            font-size: .9rem;
+            padding-bottom: 1.25rem;
+        }
+
+        .unstarted_quizz_inputs_container {
+            padding-bottom: 1.35rem;
+
+            label {
+                font-size: 1rem;
+
+                &:nth-of-type(1) {
+                    flex: 2;
+                }
+
+                &:nth-of-type(2) {
+                    flex: 1;
+                }
+
+                select {
+                    padding: .3rem;
+                    font-size: .75rem;
+                }
+
+                &:first-of-type select {
+                    width: 100%;
+                }
+
+                &:nth-of-type(2) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .unstarted_quizz_button {
+            font-size: 1rem;
+            padding: .75rem 4rem;
+        }
+    }
+}

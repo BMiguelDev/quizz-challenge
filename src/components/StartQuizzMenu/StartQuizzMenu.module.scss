@@ -1,0 +1,78 @@
+// Unstarted quizz page content
+.unstarted_quizz_container {
+    padding: 13rem 12rem;
+    width: 100%;
+    height: 92%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .unstarted_quizz_title {
+        margin: 0;
+        font-size: 2.5rem;
+        color: var(--main-title-color);
+        letter-spacing: .1rem;
+        padding-bottom: 1.5rem;
+        transition: all .2s ease-in-out;
+    }
+
+    .unstarted_quizz_text {
+        margin: 0;
+        font-size: 1.05rem;
+        color: var(--main-text-color);
+        padding-bottom: 2.2rem;
+        transition: all .2s ease-in-out;
+    }
+
+    .unstarted_quizz_inputs_container {
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 2.5rem;
+
+        label {
+            color: var(--main-text-color);
+            transition: all .2s ease-in-out;
+
+            select {
+                margin-top: .35rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-family: 'Roboto', sans-serif;
+                padding: .5rem;
+                border-radius: 1rem;
+                color: var(--main-text-color);
+                background-color: var(--form-select-container-color);
+                transition: all .2s ease-in-out;
+
+                option {
+                    padding: 1rem;
+                }
+            }
+
+            &:first-of-type select {
+                width: 90%;
+            }
+
+            &:nth-of-type(2) {
+                width: 35%;
+            }
+        }
+    }
+
+    .unstarted_quizz_button {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--button-bg-color);
+        color: var(--button-color);
+        font-size: 1.2rem;
+        padding: 1rem 5rem;
+        border-radius: .75rem;
+        border: none;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        transition: all .2s ease-in-out;
+    }
+}
+
+@import './media';

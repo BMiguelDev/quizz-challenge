@@ -1,10 +1,11 @@
 import React, { useState, useEffect, /*useRef*/ } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 import './App.scss';
-import Question from './components/Question/Question';
 import Footer from './components/Footer/Footer';
+import StartQuizzMenu from './components/StartQuizzMenu/StartQuizzMenu';
+import QuizzGame from './components/QuizzGame/QuizzGame';
 
 // Local storage constants
 const LOCAL_STORAGE_KEY_IS_QUIZ_STARTED = "QuizzicalApp.isQuizStarted";
@@ -17,8 +18,6 @@ const LOCAL_STORAGE_KEY_QUIZZ_OPTIONS = "QuizzicalApp.quizzOptions";
 
 
 export default function App() {
-
-  //State variables
 
   // Boolean variable that indicates whether the quizz has been started or not
   const [isQuizzStarted, setIsQuizzStarted] = useState(() =>
@@ -190,79 +189,13 @@ export default function App() {
     setQuizzQuestions([]);
   }
 
-  // Constant holding the completion bar filling styles, which varry based on the number of corret answers
-  const borderFillingStyles = {
-    width: quizzResults[1] > 0 ? quizzResults[1] * 20 + "%" : "10%",
-    padding: quizzResults[1] > 0 ? ".7rem" : "0.7rem .2rem",
-    border: quizzResults[1] === 0 && "none",
-    left: quizzResults[1] === 0 && "0%",
-  }
 
   return (
     <div /*ref={darkModeRef}*/ className={isDarkMode ? "app-container dark-mode" : "app-container"}>
       {
-        isQuizzStarted ?
-          (
-            <div className="quizz-container">
-              {
-                isLoading ?
-                  <div className="loading-container">
-                    <FontAwesomeIcon icon={faSpinner} />
-                  </div> :
-                  <div className="questions-container">
-                    {quizzQuestions.map((questionData, index) =>
-                      <Question
-                        key={questionData.question}
-                        questionData={questionData}
-                        questionIndex={index}
-                        handleSelectAnswer={handleSelectAnswer}
-                        isShowResults={quizzResults[0]} />)}
-                  </div>
-              }
-              <div className="results-container">
-                <div className={quizzResults[0] === false ? "results-description results-description-hide" : "results-description"}>
-                  <h3 className="results-correct-answers">You scored {quizzResults[1]}/5 correct answers</h3>
-                  <span className="completion-bar-frame"><span style={borderFillingStyles} className="completion-bar-filling"></span></span>
-                </div>
-                <div className="results-buttons-container">
-                  <button className="quizz-action-button" onClick={handleCheckResults}>{quizzResults[0] === true ? "Play Again" : "Check Answers"}</button>
-                  <button className="quizz-reset-button" onClick={handleQuizzReset}>Reset Quizz</button>
-                </div>
-              </div>
-            </div>
-          ) :
-          (
-            <div className="unstarted-quizz-container">
-              <h2 className="unstarted-quizz-title">Quizz Challenge</h2>
-              <p className="unstarted-quizz-text">
-                Choose random trivia questions and <br />
-                answer as many as you can!
-              </p>
-              <form onSubmit={handleQuizzStart}>
-                <div className="unstarted-quizz-inputs-container">
-                  <label>
-                    Category
-                    <br />
-                    <select onChange={handleQuizzOptionChange} name="category" value={quizzOptions.category}>
-                      <option value="">Any</option>
-                      {quizzCategoriesArray.map(category => <option key={category.id} value={category.id}>{category.name}</option>)}
-                    </select>
-                  </label>
-                  <label>
-                    Difficulty
-                    <br />
-                    <select onChange={handleQuizzOptionChange} name="difficulty" value={quizzOptions.difficulty}>
-                      <option value="">Any</option>
-                      <option value="easy">Easy</option>
-                      <option value="medium">Medium</option>
-                      <option value="hard">Hard</option>
-                    </select>
-                  </label>
-                </div>
-                <button type="submit" className="unstarted-quizz-button">Start Quizz</button>
-              </form>
-            </div >
-          )
+        isQuizzStarted
+          ? <QuizzGame isLoading={isLoading} quizzQuestions={quizzQuestions} handleSelectAnswer={handleSelectAnswer} quizzResults={quizzResults} handleCheckResults={handleCheckResults} handleQuizzReset={handleQuizzReset} />
+          : <StartQuizzMenu quizzCategoriesArray={quizzCategoriesArray} quizzOptions={quizzOptions} handleQuizzStart={handleQuizzStart} handleQuizzOptionChange={handleQuizzOptionChange} />
       }
       <Footer />
       <button className="dark-mode-button" title="Dark Mode" onClick={handleDarkMode}>

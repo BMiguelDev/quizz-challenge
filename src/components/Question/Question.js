@@ -48,10 +48,11 @@ export default function Question(props) {
       <div className={styles.answers_container}>
         {
           scrambledAnswers.map(answer => (
-            <div key={nanoid()} className={styles.answer_container} title="answer">
+            <div key={nanoid()} className={styles.answer_container}>
               <p
                 className={getAnswerClassName(answer)}
                 onClick={() => props.handleSelectAnswer(props.questionIndex, answer)}
+                aria-label="answer"
               >
                 {decodeQuestionString(answer)}
               </p>

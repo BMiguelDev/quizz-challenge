@@ -23,10 +23,10 @@ export default function QuizzGame({ isLoading, quizzQuestions, handleSelectAnswe
                     <div className={styles.loading_container}>
                         <FontAwesomeIcon icon={faSpinner} />
                     </div> :
-                    <div className={styles.questions_container} title="questions_container">
+                    <div className={styles.questions_container} aria-label='questions_container'>
                         {quizzQuestions.map((questionData, index) =>
                             <Question
-                                key={questionData.question}
+                                key={index}
                                 questionData={questionData}
                                 questionIndex={index}
                                 handleSelectAnswer={handleSelectAnswer}
@@ -34,7 +34,7 @@ export default function QuizzGame({ isLoading, quizzQuestions, handleSelectAnswe
                     </div>
             }
             <div className={styles.results_container}>
-                <div className={quizzResults[0] === false ? `${styles.results_description} ${styles.results_description_hide}` : styles.results_description} title="results_description">
+                <div className={quizzResults[0] === false ? `${styles.results_description} ${styles.results_description_hide}` : styles.results_description} aria-label="results_description">
                     <h3 className={styles.results_correct_answers}>You scored {quizzResults[1]}/5 correct answers</h3>
                     <span className={styles.completion_bar_frame}><span style={borderFillingStyles} className={styles.completion_bar_filling}></span></span>
                 </div>

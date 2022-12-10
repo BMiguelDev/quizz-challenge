@@ -37,7 +37,6 @@ test('component should always match snapshot', () => {
     expect(tree).toMatchSnapshot();
 });
 
-
 test('both select inputs should have empty value', () => {
     // Arrange
     render(<StartQuizzMenu quizzCategoriesArray={quizzCategoriesTest} quizzOptions={quizzOptionsTest} handleQuizzStart={propFunction1} handleQuizzOptionChange={propFunction2} />)

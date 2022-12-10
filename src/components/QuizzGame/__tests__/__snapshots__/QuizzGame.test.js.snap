@@ -5,8 +5,8 @@ exports[`component should always match snaphot 1`] = `
   className="quizz_container"
 >
   <div
+    aria-label="questions_container"
     className="questions_container"
-    title="questions_container"
   >
     <div
       className="question_container"
@@ -88,8 +88,8 @@ exports[`component should always match snaphot 1`] = `
     className="results_container"
   >
     <div
+      aria-label="results_description"
       className="results_description results_description_hide"
-      title="results_description"
     >
       <h3
         className="results_correct_answers"

@@ -191,14 +191,14 @@ export default function App() {
 
 
   return (
-    <div /*ref={darkModeRef}*/ className={isDarkMode ? "app-container dark-mode" : "app-container"}>
+    <div /*ref={darkModeRef}*/ className={isDarkMode ? "app-container dark-mode" : "app-container"} aria-label="app_container">
       {
         isQuizzStarted
           ? <QuizzGame isLoading={isLoading} quizzQuestions={quizzQuestions} handleSelectAnswer={handleSelectAnswer} quizzResults={quizzResults} handleCheckResults={handleCheckResults} handleQuizzReset={handleQuizzReset} />
           : <StartQuizzMenu quizzCategoriesArray={quizzCategoriesArray} quizzOptions={quizzOptions} handleQuizzStart={handleQuizzStart} handleQuizzOptionChange={handleQuizzOptionChange} />
       }
       <Footer />
-      <button className="dark-mode-button" title="Dark Mode" onClick={handleDarkMode}>
+      <button className="dark-mode-button" aria-label="Dark Mode" onClick={handleDarkMode}>
         {
           isDarkMode ?
             <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />

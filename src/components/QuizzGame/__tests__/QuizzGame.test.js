@@ -1,10 +1,10 @@
 import { cleanup, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import renderer from "react-test-renderer";
 
 import QuizzGame from "../QuizzGame";
 
 
+// Mock the nanoid external module used in QuizzGame component
 jest.mock("nanoid", () => ({
     __esModule: true,
     nanoid: () => Date.now()
@@ -67,24 +67,21 @@ test('component should always match snaphot', () => {
     expect(tree).toMatchSnapshot();
 })
 
-
 test('component should render 5 questions', () => {
     render(<QuizzGame isLoading={false} quizzQuestions={quizzQuestionsTest} handleSelectAnswer={mockFunction} quizzResults={[false, 0]} handleCheckResults={mockFunction} handleQuizzReset={mockFunction} />);
 
-    const questionsElement = screen.getByTitle("questions_container");
+    const questionsElement = screen.getByLabelText("questions_container");
 
     expect(questionsElement.childElementCount).toEqual(5);
 })
 
-
 test("score should not be visible if quizz is not finished", () => {
     render(<QuizzGame isLoading={false} quizzQuestions={quizzQuestionsTest} handleSelectAnswer={mockFunction} quizzResults={[false, 0]} handleCheckResults={mockFunction} handleQuizzReset={mockFunction} />);
 
-    const resultsDescriptionElement = screen.getByTitle("results_description");
+    const resultsDescriptionElement = screen.getByLabelText("results_description");
 
     expect(resultsDescriptionElement.classList).toContain("results_description_hide");
 })
-
 
 test('both "Check Answers" and "Reset Quizz" buttons should be enabled if quizz is not finished', () => {
     render(<QuizzGame isLoading={false} quizzQuestions={quizzQuestionsTest} handleSelectAnswer={mockFunction} quizzResults={[false, 0]} handleCheckResults={mockFunction} handleQuizzReset={mockFunction} />);

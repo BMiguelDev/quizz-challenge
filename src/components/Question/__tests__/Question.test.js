@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import Question from "../Question";
 
 
+// Mock the nanoid external module used in Question component
 jest.mock("nanoid", () => ({
     __esModule: true,
     nanoid: () => Date.now()
@@ -29,11 +30,10 @@ test('number of answers for multiple choice question should be 4', () => {
 
     render(<Question questionData={questionDataTest} questionIndex={0} handleSelectAnswer={mockFunction} isShowResults={false} />);
 
-    const answerElements = screen.getAllByTitle(/answer/i);
+    const answerElements = screen.getAllByLabelText(/answer/i);
 
     expect(answerElements).toHaveLength(4);
 })
-
 
 test('number of answers for true/false question should be 2', () => {
     const questionDataTest = {
@@ -49,7 +49,7 @@ test('number of answers for true/false question should be 2', () => {
 
     render(<Question questionData={questionDataTest} questionIndex={0} handleSelectAnswer={mockFunction} isShowResults={false} />);
 
-    const answerElements = screen.getAllByTitle(/answer/i);
+    const answerElements = screen.getAllByLabelText(/answer/i);
 
     expect(answerElements).toHaveLength(2);
 })

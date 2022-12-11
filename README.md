@@ -15,6 +15,6 @@
 ## Skills shown in this project:
 - React, Sass
 - API Manipulation
-- Unit and Integration Testing
+- Unit, Integration, and End to End Testing
 - Responsive Design
 - Performance and Accessibility Optimization (100% Chrome Lighthouse score)

@@ -18,7 +18,8 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.54.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,6 +48,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.7",
+    "cypress": "^12.0.2",
     "msw": "^0.49.1",
     "react-test-renderer": "^18.2.0"
   }

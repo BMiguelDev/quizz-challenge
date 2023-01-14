@@ -25,7 +25,7 @@ export default function Footer() {
                     <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer" aria-label="Github Profile">
                         <FontAwesomeIcon icon={faLinkedin} />
                     </a>
-                    <a href="https://google.com" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
+                    <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
                         <FontAwesomeIcon icon={faGithub} />
                     </a>
                 </div>

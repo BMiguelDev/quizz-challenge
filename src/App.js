@@ -1,4 +1,4 @@
-import React, { useState, useEffect, /*useRef*/ } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
@@ -50,6 +50,8 @@ export default function App() {
   // Variable to handle dark mode without unnecessary re-renders
   //let darkModeRef = useRef();
 
+  const appDivRef = useRef(null); 
+
   // On first component mount, fetch question categories from API and store then in the <quizzCategoriesArray> variable
   useEffect(() => {
     if (quizzCategoriesArray.length === 0) {
@@ -57,7 +59,19 @@ export default function App() {
         .then(res => res.json())
         .then(data => setQuizzCategoriesArray(data.trivia_categories));
     }
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+    const handleResize = () => {
+      if(appDivRef.current) appDivRef.current.style.height = `${window.innerHeight}px`;
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    }; 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_IS_QUIZ_STARTED, JSON.stringify(isQuizzStarted));
@@ -191,7 +205,7 @@ export default function App() {
 
 
   return (
-    <div /*ref={darkModeRef}*/ className={isDarkMode ? "app-container dark-mode" : "app-container"} aria-label="app_container">
+    <div /*ref={darkModeRef}*/ ref={appDivRef} className={isDarkMode ? "app-container dark-mode" : "app-container"} aria-label="app_container">
       {
         isQuizzStarted
           ? <QuizzGame isLoading={isLoading} quizzQuestions={quizzQuestions} handleSelectAnswer={handleSelectAnswer} quizzResults={quizzResults} handleCheckResults={handleCheckResults} handleQuizzReset={handleQuizzReset} />

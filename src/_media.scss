@@ -11,7 +11,7 @@ screen and (max-height: 200px) {
             position: fixed;
             visibility: visible;
             background-color: var(--app-bg-color);
-            color: var(--header-color);
+            color: var(--answer-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,18 +27,38 @@ screen and (max-height: 200px) {
 }
 
 
+// Media query for mobile extremelly small screens
+@media screen and (max-width: 400px),
+screen and (max-height: 450px) {
+
+    // Dark Mode content
+    .dark-mode-button {
+        top: 1.75%;
+        right: 0%;
+
+        svg {
+            padding: .175rem;
+            width: .65rem;
+            height: .65rem;
+            
+            &:hover {
+                color: var(--dark-mode-icon-color);
+                background-color: var(--dark-mode-icon-bg-color);
+            }
+        }
+    }
+}
+
+
 // Media query for mobile content (portrait)
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) and (min-height: 450px) {
 
     // Dark Mode content
     .dark-mode-button {
         top: 1.5%;
         right: 2.50%;
-        // width: 1.8rem;
-        // height: 1.8rem;
 
         svg {
-            //font-size: 1.2rem;
             padding: .3rem;
             width: .95rem;
             height: .95rem;
@@ -53,17 +73,14 @@ screen and (max-height: 200px) {
 
 
 // Media query for mobile content (landscape)
-@media screen and (max-height: 750px) and (min-width: 451px) {
+@media screen and (max-height: 1200px) and (min-width: 550px) and (max-width: 900px), screen and (max-height: 750px) and (min-width: 900px) {
 
     // Dark Mode content
     .dark-mode-button {
         top: 2.5%;
         right: 1.5%;
-        // width: 1.8rem;
-        // height: 1.8rem;
 
         svg {
-            //font-size: 1.2rem;
             padding: .3rem;
             width: .95rem;
             height: .95rem;

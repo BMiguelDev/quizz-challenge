@@ -84,7 +84,6 @@ body {
 // App content
 .app-container {
     background-color: var(--app-bg-color);
-    //height: 100vh;
     max-height: 100vh;
     position: relative;
     transition: all .2s ease-in-out;
@@ -105,9 +104,9 @@ body {
     background-color: transparent;
 
     svg {
-        font-size: 1.5rem;
-        width: 1.5rem;
-        height: 1.5rem;
+        font-size: 1.25rem;
+        width: 1.35rem;
+        height: 1.35rem;
         padding: .5rem;
         color: var(--dark-mode-icon-color);
         background-color: var(--dark-mode-icon-bg-color);
@@ -120,5 +119,6 @@ body {
         }
     }
 }
+
 
 @import './media';

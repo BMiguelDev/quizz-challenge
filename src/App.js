@@ -203,10 +203,7 @@ export default function App() {
     setQuizzQuestions([]);
   }
 
-
-  // TODO: fix style above 450 width and above 750 height
-
-
+  
   return (
     <div /*ref={darkModeRef}*/ ref={appDivRef} className={isDarkMode ? "app-container dark-mode" : "app-container"} aria-label="app_container">
       {

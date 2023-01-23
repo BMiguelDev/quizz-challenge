@@ -12,7 +12,7 @@
     .answers_container {
         display: flex;
         align-items: center;
-        gap: .75rem;
+        gap: 1.25rem;
         justify-content: flex-start;
 
         .answer_container {
@@ -27,7 +27,6 @@
                 color: var(--answer-checkmark-color);
                 opacity: 0;
                 filter: drop-shadow(0 0 3px rgb(228, 255, 205));
-                //text-shadow: 0 0 .6rem rgb(251, 255, 235), 0 0 1.1rem rgb(253, 255, 187), 0 0 1.6rem #82ff2f, 0 0 2.1rem #5ce600;
                 z-index: 3;
 
                 @keyframes checkmark-opacity {
@@ -43,12 +42,10 @@
                 @keyframes checkmark-glow {
                     0% {
                         filter: drop-shadow(0 0 0 rgb(228, 255, 205));
-                        //text-shadow: 0 0 .15rem rgb(240, 255, 216), 0 0 .4rem rgb(240, 255, 216), 0 0 .9rem rgb(228, 255, 205), 0 0 1.4rem #5ce600, 0 0 1.9rem #5ce600, 0 0 2.4rem #3a9000, 0 0 2.9rem #3a9000;
                     }
 
                     100% {
                         filter: drop-shadow(0 0 1rem rgb(80, 229, 0));
-                        //text-shadow: 0 0 .15rem rgb(80, 229, 0), 0 0 .4rem rgb(80, 229, 0), 0 0 .9rem #9ff930, 0 0 1.4rem #a8dd67, 0 0 1.9rem #d7ffa7;
                     }
                 }
 
@@ -66,7 +63,6 @@
                 font-weight: 600;
                 color: var(--answer-color);
                 transform: scale(1);
-                //transition: background-color .2s ease-in-out, transform .2s ease-in-out;
                 transition: all .2s ease-in-out;
 
                 &:hover:not(.answer_incorrect, .answer_dimmed, .answer_correct, .answer_selected) {
@@ -103,8 +99,6 @@
                 &.answer_incorrect {
                     background-color: var(--answer-incorrect-color);
                     color: var(--answer-dimmed-color-transparent);
-                    //opacity: .5;
-                    //opacity: .8;
                 }
 
                 &.answer_dimmed {
@@ -120,5 +114,6 @@
         transition: all .2s ease-in-out;
     }
 }
+
 
 @import './media';

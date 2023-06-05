@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { nanoid } from "nanoid"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import propTypes from "prop-types"
 
 import styles from './Question.module.scss';
 
 
+/**
+ * Element containing a question and its possible answers
+ */
 export default function Question(props) {
 
   // Variable that holds an array with the answers scrambled (random order)
@@ -64,4 +68,38 @@ export default function Question(props) {
       <hr className={styles.question_separator} />
     </div>
   )
+}
+
+Question.propTypes = {
+  /**
+   * Question information, including:
+   * - category
+   * - type
+   * - difficulty
+   * - question text
+   * - correct answer
+   * - array of incorrect answers
+   * - selected answer (optional)
+   */
+  questionData: propTypes.shape({
+    category: propTypes.string,
+    type: propTypes.string,
+    difficulty: propTypes.string,
+    question: propTypes.string,
+    correct_answer: propTypes.string,
+    incorrect_answers: propTypes.arrayOf(propTypes.string),
+    answerSelected: propTypes.string
+  }),
+  /**
+   * Id of the question
+   */
+  questionIndex: propTypes.number,
+  /**
+   * Click handler for the answers
+   */
+  handleSelectAnswer: propTypes.func,
+  /**
+   * Flag indicating whether or not to show the question's results
+   */
+  isShowResults: propTypes.bool
 }

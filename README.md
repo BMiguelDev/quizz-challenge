@@ -17,4 +17,5 @@
 - API Manipulation
 - Unit, Integration, and End to End Testing
 - Responsive Design
+- Documentation (Storybook)
 - Performance and Accessibility Optimization (100% Chrome Lighthouse score)

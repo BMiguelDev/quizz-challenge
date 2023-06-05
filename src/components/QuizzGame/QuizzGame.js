@@ -8,7 +8,7 @@ import styles from './QuizzGame.module.scss';
 
 export default function QuizzGame({ isLoading, quizzQuestions, handleSelectAnswer, quizzResults, handleCheckResults, handleQuizzReset }) {
 
-    // Constant holding the completion bar filling styles, which varry based on the number of corret answers
+    // Constant holding the completion bar filling styles, which varry based on the number of correct answers
     const borderFillingStyles = {
         width: quizzResults[1] > 0 ? quizzResults[1] * 20 + "%" : "10%",
         padding: quizzResults[1] > 0 ? ".7rem" : "0.7rem .2rem",

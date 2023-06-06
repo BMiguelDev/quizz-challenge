@@ -22,11 +22,11 @@ export default function Footer() {
                     <a href="https://google.com" target="_blank" rel="noreferrer" aria-label="My Website">
                         <FontAwesomeIcon icon={faDesktop} />
                     </a>
-                    <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer" aria-label="Github Profile">
-                        <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
                     <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
                         <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/miguel--bruno/" target="_blank" rel="noreferrer" aria-label="Github Profile">
+                        <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                 </div>
             </div>

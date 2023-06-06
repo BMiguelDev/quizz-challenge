@@ -3,9 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import Question from '../Question/Question';
+import propTypes from "prop-types";
+
 import styles from './QuizzGame.module.scss';
 
-
+/**
+ * Element containing a set of questions and a results area, along with buttons for checking results and restarting the quizz
+ */
 export default function QuizzGame({ isLoading, quizzQuestions, handleSelectAnswer, quizzResults, handleCheckResults, handleQuizzReset }) {
 
     // Constant holding the completion bar filling styles, which varry based on the number of correct answers
@@ -45,4 +49,39 @@ export default function QuizzGame({ isLoading, quizzQuestions, handleSelectAnswe
             </div>
         </div>
     );
+}
+
+QuizzGame.propTypes = {
+    /**
+     * Flag indicating if the quizz is loading the question data
+     */
+    isLoading: propTypes.bool,
+    /**
+     * Array holding each question's data
+     */
+    quizzQuestions: propTypes.arrayOf(propTypes.shape({
+        category: propTypes.string,
+        type: propTypes.string,
+        difficulty: propTypes.string,
+        question: propTypes.string,
+        correct_answer: propTypes.string,
+        incorrect_answers: propTypes.arrayOf(propTypes.string),
+        answerSelected: propTypes.string
+    })),
+    /**
+     * Array containing quizz results in the format [isResultsShown, counterCorrectAnswers]
+     */
+    quizzResults: propTypes.arrayOf(propTypes.oneOfType([propTypes.bool, propTypes.number])),
+    /**
+     * Click handler for the answers
+     */
+    handleSelectAnswer: propTypes.func,
+    /**
+     * Click handler for checking results
+     */
+    handleCheckResults: propTypes.func,
+    /**
+     * Click handler for restarting quizz
+     */
+    handleQuizzReset: propTypes.func
 }

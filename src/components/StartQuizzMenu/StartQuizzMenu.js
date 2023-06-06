@@ -1,8 +1,12 @@
 import React from 'react'
+import propTypes from "prop-types"
 
 import styles from './StartQuizzMenu.module.scss';
 
 
+/**
+ * Element containing a menu for starting a quizz with specific settings
+ */
 export default function StartQuizzMenu({ quizzCategoriesArray, quizzOptions, handleQuizzStart, handleQuizzOptionChange }) {
     return (
         <div className={styles.unstarted_quizz_container}>
@@ -36,4 +40,33 @@ export default function StartQuizzMenu({ quizzCategoriesArray, quizzOptions, han
             </form>
         </div>
     );
+}
+
+StartQuizzMenu.propTypes = {
+    /**
+     * Array of question categories
+     */
+    quizzCategoriesArray: propTypes.arrayOf(propTypes.shape({
+        id: propTypes.number,
+        name: propTypes.string
+    })),
+    /**
+     * Quizz options, including:
+     * - category
+     * - difficulty
+     * - URL used for API request
+     */
+    quizzOptions: propTypes.shape({
+        category: propTypes.string,
+        difficulty: propTypes.string,
+        urlUsed: propTypes.string
+    }),
+    /**
+     * Handler to start quizz
+     */
+    handleQuizzStart: propTypes.func,
+    /**
+     * Handler to change quizz options
+     */
+    handleQuizzOptionChange: propTypes.func
 }

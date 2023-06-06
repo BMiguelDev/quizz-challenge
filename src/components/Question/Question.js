@@ -99,7 +99,7 @@ Question.propTypes = {
    */
   handleSelectAnswer: propTypes.func,
   /**
-   * Flag indicating whether or not to show the question's results
+   * Flag indicating whether or not to show the question's correct answer
    */
   isShowResults: propTypes.bool
 }

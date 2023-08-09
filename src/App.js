@@ -221,7 +221,3 @@ export default function App() {
     </div >
   )
 }
-
-
-// TODO:
-//    - check if fixing scrolling from scroll to auto breaks anything on physical smartphone

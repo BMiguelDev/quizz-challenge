@@ -1,10 +1,10 @@
 // Media query for mobile extremelly small screens
-@media screen and (max-width: 400px),
-screen and (max-height: 450px) {
+@media screen and (min-width: 250px) and (max-width: 400px) and (min-height: 200px),
+screen and (min-height: 200px) and (max-height: 450px) and (min-width: 250px) {
 
     // Footer container
     .footer_container {
-        max-height: 7%;
+        max-height: 7.5%;
         height: fit-content;
         padding: .15rem .2rem;
         gap: .25rem;
@@ -27,6 +27,7 @@ screen and (max-height: 450px) {
                 p {
                     word-spacing: .01rem;
                     font-size: .415rem;
+                    line-height: .4rem;
                     margin: 0;
                 }
             }
@@ -65,7 +66,7 @@ screen and (max-height: 450px) {
 
 
 // Media query for mobile content (portrait)
-@media screen and (max-width: 550px) and (min-height: 450px) {
+@media screen and (min-width: 400px) and (max-width: 550px) and (min-height: 450px) {
 
     // Footer container
     .footer_container {
@@ -130,8 +131,9 @@ screen and (max-height: 450px) {
 
 
 // Media query for mobile content (landscape)
-@media screen and (max-height: 1200px) and (min-width: 550px) and (max-width: 900px),
-screen and (max-height: 750px) and (min-width: 900px) {
+@media screen and (min-height: 450px) and (max-height: 900px) and (min-width: 550px) and (max-width: 900px),
+screen and (min-height: 900px) and (min-width: 550px) and (max-width: 650px),
+screen and (min-height: 450px) and (max-height: 650px) and (min-width: 900px) {
 
     // Footer container
     .footer_container {

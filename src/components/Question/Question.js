@@ -65,7 +65,7 @@ export default function Question(props) {
           ))
         }
       </div>
-      <hr className={styles.question_separator} />
+      {/* <hr className={styles.question_separator} /> */}
     </div>
   )
 }

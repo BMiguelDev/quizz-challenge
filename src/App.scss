@@ -19,10 +19,11 @@ body {
 :root {
     --app-bg-color: rgb(237, 237, 237);
     --question-color: rgb(45, 45, 147);
+    --question-box-shadow-color: rgb(140, 140, 182);
     --answer-color: rgb(39, 39, 123);
     --answer-border-color: rgba(31, 31, 105, 0.432);
     --answer-selected-color: rgba(94, 94, 255, 0.26);
-    --answer-correct-color: rgba(0, 191, 51, 0.434);
+    --answer-correct-color: rgb(116, 226, 145);
     --answer-correct-selected-color: rgb(229, 252, 79);
     --answer-correct-selected-text-color: rgb(39, 39, 123);
     --answer-incorrect-color: rgb(255, 171, 171);
@@ -51,6 +52,7 @@ body {
 .dark-mode {
     --app-bg-color: rgba(26, 26, 26, 0.99);
     --question-color: rgba(110, 176, 242, 0.93);
+    --question-box-shadow-color: rgba(49, 97, 145, 0.93);
     --answer-color: rgb(218, 224, 255);
     --answer-border-color: rgba(78, 76, 191, 0.974);
     --answer-selected-color: rgba(47, 20, 200, 0.816);

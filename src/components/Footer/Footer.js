@@ -19,7 +19,7 @@ export default function Footer() {
                     <a href="https://github.com/BMiguelDev/quizz-challenge" target="_blank" rel="noreferrer" aria-label="Check the app's code">
                         <FontAwesomeIcon icon={faCode} />
                     </a>
-                    <a href="https://google.com" target="_blank" rel="noreferrer" aria-label="My Website">
+                    <a href="https://bmigueldev.github.io/brunomiguel" target="_blank" rel="noreferrer" aria-label="Bruno Miguel">
                         <FontAwesomeIcon icon={faDesktop} />
                     </a>
                     <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
